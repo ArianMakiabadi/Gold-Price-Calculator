@@ -5,11 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="" />
     <link rel="stylesheet" type="text/css" href="./build/tailwind.css" />
-    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Gold Price Calculator</title>
   </head>
-  <body>
+  <body class="bg-gold-50">
     <header></header>
-    <main></main>
+    <main class="flex items-center justify-center h-screen">
+      <div
+        class="flex flex-1 flex-col container bg-yellow-100 rounded-lg justify-center items-center p-4"
+      >
+        <h1 class="text-gold-800 font-bold text-lg">Gold Price Calculator</h1>
+        <p id="currPrice">100</p>
+        <div>
+          <form
+            action=""
+            id="form"
+            class="grid grid-cols-[auto_1fr] gap-2 p-4 items-center justify-center"
+          >
+            <label for="weight" class="text-nowrap">Net weight:</label>
+            <input
+              class="rounded-lg px-3 py-1"
+              type="number"
+              name="weight"
+              id="weight"
+              placeholder="Enter the weight (grams) "
+            />
+
+            <label for="labor" class="text-nowrap">Labor Costs:</label>
+            <input
+              class="rounded-lg px-3 py-1"
+              type="number"
+              name="labor"
+              id="labor"
+              placeholder="Enter labor costs (%) "
+            />
+            <label for="labor" class="text-nowrap"
+              >Seller's Profit Margin:</label
+            >
+            <input
+              class="rounded-lg px-3 py-1"
+              type="number"
+              name="weight"
+              id="weight"
+              placeholder="Enter seller's profit (%) "
+            />
+            <button class="bg-gold-500 col-span-2 text-center rounded-lg py-1">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
     <footer></footer>
     <script src="../src/js/scripts.js"></script>
   </body>
