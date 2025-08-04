@@ -3,57 +3,123 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dongle:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" type="text/css" href="./build/tailwind.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Gold Price Calculator</title>
   </head>
-  <body class="bg-gold-50">
+  <body class="bg-gold-50 font-dongle">
     <header></header>
     <main class="flex items-center justify-center h-screen">
       <div
         class="flex flex-1 flex-col container bg-yellow-100 rounded-lg justify-center items-center p-4"
       >
-        <h1 class="text-gold-800 font-bold text-lg">Gold Price Calculator</h1>
+        <h1 class="text-gold-800 font-bold text-4xl">Gold Price Calculator</h1>
         <p id="currPrice">100</p>
+
+        <!-- input section -->
         <div>
           <form
             action=""
             id="form"
             class="grid grid-cols-[auto_1fr] gap-2 p-4 items-center justify-center"
           >
-            <label for="weight" class="text-nowrap">Net weight:</label>
+            <label for="weight" class="text-nowrap text-xl">Net weight:</label>
             <input
-              class="rounded-lg px-3 py-1"
+              class="rounded-lg px-3 py-1 text-xl"
               type="number"
               name="weight"
               id="weight"
               placeholder="Enter the weight (grams) "
             />
 
-            <label for="labor" class="text-nowrap">Labor Costs:</label>
+            <label for="labor" class="text-nowrap text-xl">Labor Costs:</label>
             <input
-              class="rounded-lg px-3 py-1"
+              class="rounded-lg px-3 py-1 text-xl"
               type="number"
               name="labor"
               id="labor"
               placeholder="Enter labor costs (%) "
             />
-            <label for="labor" class="text-nowrap"
+            <label for="profit" class="text-nowrap text-xl"
               >Seller's Profit Margin:</label
             >
             <input
-              class="rounded-lg px-3 py-1"
+              class="rounded-lg px-3 py-1 text-xl"
               type="number"
-              name="weight"
-              id="weight"
+              name="profit"
+              id="profit"
               placeholder="Enter seller's profit (%) "
             />
-            <button class="bg-gold-500 col-span-2 text-center rounded-lg py-1">
+            <button
+              type="submit"
+              class="bg-gold-500 col-span-2 text-center rounded-lg py-1 text-xl"
+            >
               Submit
             </button>
           </form>
         </div>
+        <!-- input section end-->
+        <!-- result section -->
+        <div
+          class="grid sm:grid-cols-2 bg-gold-500 p-2 rounded-lg w-full max-w-screen-md gap-2"
+        >
+          <div class="flex bg-gold-300 rounded-lg py-1 px-4">
+            <span
+              ><p class="text-2xl lg:text-3xl">Final price:</p>
+              <p class="text-sm lg:text-base text-gray-500">
+                (Gold Price + labor costs + profit + 18% VAT)
+              </p>
+            </span>
+            <p id="finalPrice" class="ml-auto text-2xl lg:text-3xl">$100</p>
+          </div>
+
+          <div class="flex bg-gold-300 rounded-lg py-1 px-4">
+            <span
+              ><p class="text-2xl lg:text-3xl">Net Gold Value:</p>
+              <p class="text-sm lg:text-base text-gray-500">
+                (Gold Price × Weight)
+              </p>
+            </span>
+            <p id="goldValue" class="ml-auto text-2xl lg:text-3xl">$100</p>
+          </div>
+
+          <div class="flex bg-gold-300 rounded-lg py-1 px-4">
+            <span
+              ><p class="text-2xl lg:text-3xl">Total Labor Costs:</p>
+              <p class="text-sm lg:text-base text-gray-500">
+                (Gold Value × Labor Costs)
+              </p>
+            </span>
+            <p id="laborCost" class="ml-auto text-2xl lg:text-3xl">$100</p>
+          </div>
+
+          <div class="flex bg-gold-300 rounded-lg py-1 px-4">
+            <span
+              ><p class="text-2xl lg:text-3xl">Seller's Profit:</p>
+              <p class="text-sm lg:text-base text-gray-500">
+                (Gold Value + Labor Costs) × %Seller's Profit Margin
+              </p>
+            </span>
+            <p id="profit" class="ml-auto text-2xl lg:text-3xl">$100</p>
+          </div>
+
+          <div class="flex bg-gold-300 rounded-lg py-1 px-4">
+            <span
+              ><p class="text-2xl lg:text-3xl">VAT:</p>
+              <p class="text-sm lg:text-base text-gray-500">
+                (Seller's Profit + Labor Costs) × %18 VAT
+              </p>
+            </span>
+            <p id="vat" class="ml-auto text-2xl lg:text-3xl">$100</p>
+          </div>
+        </div>
+        <!-- result section end-->
       </div>
     </main>
     <footer></footer>

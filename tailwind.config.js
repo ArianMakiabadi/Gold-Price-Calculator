@@ -21,6 +21,10 @@ export default {
           700: "#333333",
         },
       },
+      fontFamily: {
+        /* gives you the class `font-dongle` */
+        dongle: ['"Dongle"', "sans-serif"],
+      },
     },
   },
   plugins: [],
