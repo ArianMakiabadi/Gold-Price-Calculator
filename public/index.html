@@ -27,11 +27,11 @@
           <form
             action=""
             id="form"
-            class="grid grid-cols-[auto_1fr] gap-2 p-4 items-center justify-center"
+            class="flex flex-col md:grid md:grid-cols-[auto_1fr] md:gap-2 p-4 items-start md:items-center justify-center"
           >
             <label for="weight" class="text-nowrap text-xl">Net weight:</label>
             <input
-              class="rounded-lg px-3 py-1 text-xl"
+              class="rounded-lg px-3 py-1 text-xl mb-2 md:mb-0"
               type="number"
               name="weight"
               id="weight"
@@ -40,7 +40,7 @@
 
             <label for="labor" class="text-nowrap text-xl">Labor Costs:</label>
             <input
-              class="rounded-lg px-3 py-1 text-xl"
+              class="rounded-lg px-3 py-1 text-xl mb-2 md:mb-0"
               type="number"
               name="labor"
               id="labor"
@@ -50,7 +50,7 @@
               >Seller's Profit Margin:</label
             >
             <input
-              class="rounded-lg px-3 py-1 text-xl"
+              class="rounded-lg px-3 py-1 text-xl mb-2 md:mb-0"
               type="number"
               name="profit"
               id="profit"
@@ -58,7 +58,7 @@
             />
             <button
               type="submit"
-              class="bg-gold-500 col-span-2 text-center rounded-lg py-1 text-xl"
+              class="bg-gold-500 col-span-2 text-center rounded-lg py-1 text-xl w-full"
             >
               Submit
             </button>
