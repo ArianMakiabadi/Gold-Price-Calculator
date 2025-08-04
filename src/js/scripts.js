@@ -1,4 +1,4 @@
-const API_KEY = "goldapi-193rkxr5smdskt5ty-io";
+const API_KEY = "goldapi-193rkxr5smdskt5ty-io"; //availble for free on goldapi.io
 const API = "https://www.goldapi.io/api/XAU/USD";
 
 let currGoldPrice; // 1 gram of 18k gold (USD)
@@ -18,12 +18,16 @@ const myHeaders = {
   "Content-Type": "application/json",
 };
 
-async function fetchGoldPrice() {
-  const {
-    data: { price_gram_18k },
-  } = await axios.get(API, { headers: myHeaders });
-  currGoldPrice = price_gram_18k;
-  currPrice.innerText = `Today's 18k Gold price per Gram: $${currGoldPrice}`;
+function fetchGoldPrice() {
+  axios
+    .get(API, { headers: myHeaders })
+    .then(({ data: { price_gram_18k } }) => {
+      currGoldPrice = price_gram_18k;
+      currPrice.innerText = `Today's 18k Gold price per Gram: $${currGoldPrice}`;
+    })
+    .catch((err) => {
+      console.error(err);
+    });
 }
 
 // Event Listeners
