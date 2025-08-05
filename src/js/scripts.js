@@ -67,5 +67,7 @@ function calcProfit(data) {
 }
 
 function calcVat(data) {
-  return ((calcProfit(data) + calcLaborCost(data)) * 18) / 100;
+  return (
+    ((calcProfit(data) + calcLaborCost(data) + calcNetValue(data)) * 18) / 100
+  );
 }
